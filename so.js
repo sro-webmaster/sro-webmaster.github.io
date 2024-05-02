@@ -45,7 +45,7 @@ const SO = {
   handleImageLoad: function() {
     let lesserDimension = SO.imageObject.width < SO.imageObject.height ? SO.imageObject.width : SO.imageObject.height;
     if (lesserDimension < SO.minImageSize) {
-      SO.showError(`The image must be at least ${SO.minImageSize.toLocaleString()}px on the small side.`, SO.fileError);
+      SO.showError(`The image must be at least ${SO.minImageSize.toLocaleString()}px on the short side. The image you uploaded was only ${lesserDimension.toLocaleString()}px on the short side.`, SO.fileError);
       SO.enableControls();
       return;
     }
