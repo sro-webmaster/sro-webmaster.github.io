@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link href="./so.css" rel="stylesheet">
+
+    <title>SRO Shout-Out Submission</title>
+
+  </head>
+
+  <body class="bg-neutral-100 flex flex-col justify-start items-center">
+
+    <div class="w-full md:max-w-[45rem] lg:max-w-[60rem] md:mb-12">
+      <h1 class="m-12 flex flex-col justify-center items-center">
+        <img alt="Standing Room Only" src="./logo.png" class="h-36 inline-block">
+      </h1>
+      <div class="bg-white p-4 md:rounded md:shadow">
+        <p class="text-xl leading-snug">Thank you for purchasing a shout-out! Please use the form below to customize your shout-out. If you have any questions, please reach out to Toby Varland at <a class="decoration-2 underline decoration-sky-600" href="mailto:design@sroinc.org?subject=Shout-Out%20Submission">design@sroinc.org</a>.</a></p>
+        <div class="mt-4 p-4 rounded shadow bg-sky-100">
+          <p class="font-semibold leading-none -mx-4 -mt-4 p-4 bg-sky-200 rounded-t">Guidelines</p>
+          <p class="mt-2 leading-snug">We want your shout-out to look amazing, so please keep the following in mind:</p>
+          <ul class="list-disc leading-snug ms-8">
+            <li class="mt-2">While show program pages may not seem large at 5&frac12;&Prime; &times; 8&frac12;&Prime;, photos do need to be high resolution in order to ensure they look good printed. Try to err on the side of too large, and we'll contact you if there are issues or questions about cropping.</li>
+            <li class="mt-2">Unless you've purchased a full-page shout-out, submitting collages or images containing more than one photo generally isn't a good idea.</li>
+            <li class="mt-2">
+              <p>It's generally a good idea to avoid including specific line-breaks in your shout-out text:</p>
+              <div class="bg-sky-50 text-sm p-2 mt-2 italic rounded shadow">My Darling Angel: Congratulations on your first Highlands Theatre show! You're going to be amazing and we can't wait to see you shine on stage! - Love Mom & Dad</div>
+              <p class="mt-2">works better than</p>
+              <div class="bg-sky-50 text-sm p-2 mt-2 italic rounded shadow">My Darling Angel:<br><br>Congratulations on your first Highlands Theatre show!<br><br>You're going to be amazing and we can't wait to see you shine on stage!<br><br>- Love Mom & Dad</div>
+              <p class="mt-2">We try not to edit your submission unnecessarily, but we'll do what we need to in order to make sure it works well.</p>
+            </li>
+          </ul>
+        </div>
+        <form id="shout-out-form" class="mt-4 p-4 rounded shadow bg-neutral-100 appearance-none">
+          <p class="font-semibold leading-none -mx-4 -mt-4 p-4 bg-neutral-200 rounded-t">Shout-Out Details</p>
+          <div id="form-content" class="flex flex-col justify-start items-center gap-2 mt-2">
+            <div class="w-full">
+              <label for="student-name" class="w-full">Student Name(s): <span class="text-red-500 font-extrabold">*</span></label>
+              <input type="text" name="studentName" id="student-name" required="required" class="w-full rounded shadow p-2 appearance-none border-0 outline-none ring-1 ring-neutral-100 focus:ring-2 focus:ring-sky-200 bg-white leading-snug m-0 disabled:bg-neutral-100 disabled:text-neutral-500">
+              <p class="text-neutral-500 font-light text-sm leading-snug">Please include the full name(s). We have lots of kids in this program and want to make sure we don't mix anything up.</p>
+              <p id="name-error" class="text-red-500 font-semibold text-sm mt-1 hidden"></p>
+            </div>
+            <div class="w-full">
+              <label for="text" class="w-full">Text: <span class="text-red-500 font-extrabold">*</span></label>
+              <textarea id="text" name="shoutOutText" required="required" rows="3" class="w-full rounded shadow p-2 appearance-none border-0 outline-none ring-1 ring-neutral-100 focus:ring-2 focus:ring-sky-200 bg-white leading-snug m-0 disabled:bg-neutral-100 disabled:text-neutral-500"></textarea>
+              <p id="text-error" class="text-red-500 font-semibold text-sm hidden"></p>
+            </div>
+            <div class="w-full -mt-1">
+              <label for="file" class="w-full">Photo: <span class="text-red-500 font-extrabold">*</span></label>
+              <input id="file" type="file" name="file" required="required" accept="image/*" class="w-full rounded shadow p-2 appearance-none border-0 outline-none ring-1 ring-neutral-100 focus:ring-2 focus:ring-sky-200 bg-white leading-snug m-0 disabled:bg-neutral-100 disabled:text-neutral-500">
+              <p class="text-neutral-500 font-light text-sm leading-snug">Must be at least 1500px on the short side.</p>
+              <p id="file-error" class="text-red-500 font-semibold text-sm mt-1 hidden"></p>
+            </div>
+            <button id="submit-button" type="submit" class="inline-block disabled:bg-sky-500 disabled:text-neutral-200 bg-sky-600 text-white font-semibold px-4 py-2 rounded shadow mt-2 uppercase focus:bg-sky-700 hover:bg-sky-700 active:bg-sky-700">Submit Shout-Out</button>
+          </div>
+          <div class="form-finished hidden my-12 text-2xl text-center text-balance font-light">
+            Your shout-out has been successfully submitted! Thank you and we can't wait to see you at the show!
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./so.js"></script>
+    
+  </body>
+
+</html>
