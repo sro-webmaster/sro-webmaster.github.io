@@ -8,9 +8,13 @@ const SO = {
 
   form: null,
   formContent: null,
+  purchaserNameInput: null,
+  purchaserEmailInput: null,
   studentNameInput: null,
   textInput: null,
   fileInput: null,
+  purchaserNameError: null,
+  emailError: null,
   nameError: null,
   textError: null,
   fileError: null,
@@ -55,6 +59,8 @@ const SO = {
   submitInBackground: function() {
     SO.setLoadingState();
     SO.formData = new FormData();
+    SO.formData.append('purchaserName', SO.purchaserNameInput.value);
+    SO.formData.append('purchaserEmail', SO.purchaserEmailInput.value);
     SO.formData.append('studentName', SO.studentNameInput.value);
     SO.formData.append('shoutOutText', SO.textInput.value);
     SO.formData.append('encodedFile', SO.fileReader.result);
@@ -101,9 +107,13 @@ const SO = {
   buildReferences: function() {
     SO.form = document.getElementById('shout-out-form');
     SO.formContent = document.getElementById('form-content');
+    SO.purchaserNameInput = document.getElementById('purchaser-name');
+    SO.purchaserEmailInput = document.getElementById('purchaser-email');
     SO.studentNameInput = document.getElementById('student-name');
     SO.textInput = document.getElementById('text');
     SO.fileInput = document.getElementById('file');
+    SO.purchaserNameError = document.getElementById('purchaser-name-error');
+    SO.emailError = document.getElementById('email-error');
     SO.nameError = document.getElementById('name-error');
     SO.textError = document.getElementById('text-error');
     SO.fileError = document.getElementById('file-error');
@@ -128,15 +138,21 @@ const SO = {
   },
 
   clearAndHideErrors: function() {
+    SO.purchaserNameError.textContent = '';
+    SO.emailError.textContent = '';
     SO.nameError.textContent = '';
     SO.textError.textContent = '';
     SO.fileError.textContent = '';
+    SO.purchaserNameError.classList.add('hidden');
+    SO.emailError.classList.add('hidden');
     SO.nameError.classList.add('hidden');
     SO.textError.classList.add('hidden');
     SO.fileError.classList.add('hidden');
   },
 
   disableControls: function() {
+    SO.purchaserNameInput.disabled = true;
+    SO.purchaserEmailInput.disabled = true;
     SO.studentNameInput.disabled = true;
     SO.textInput.disabled = true;
     SO.fileInput.disabled = true;
@@ -144,6 +160,8 @@ const SO = {
   },
 
   enableControls: function() {
+    SO.purchaserNameInput.disabled = false;
+    SO.purchaserEmailInput.disabled = false;
     SO.studentNameInput.disabled = false;
     SO.textInput.disabled = false;
     SO.fileInput.disabled = false;
@@ -157,6 +175,8 @@ const SO = {
   },
 
   validateForm: function() {
+    if (SO.purchaserNameInput.value.trim() === '') return SO.showError('Please enter the purchaser name.', SO.purchaserNameError);
+    if (SO.purchaserEmailInput.value.trim() === '') return SO.showError('Please enter the purchaser email address.', SO.emailError);
     if (SO.studentNameInput.value.trim() === '') return SO.showError('Please enter the student name(s).', SO.nameError);
     if (SO.textInput.value.trim() === '') return SO.showError('Please enter the shout-out text.', SO.textError);
     if (SO.fileInput.files.length === 0) return SO.showError('Please select a photo for the shout-out.', SO.fileError);

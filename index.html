@@ -38,6 +38,18 @@
           <p class="font-semibold leading-none -mx-4 -mt-4 p-4 bg-neutral-200 rounded-t">Shout-Out Details</p>
           <div id="form-content" class="flex flex-col justify-start items-center gap-2 mt-2">
             <div class="w-full">
+              <label for="purchaser-name" class="w-full">Purchaser Name:</label>
+              <input type="text" name="purchaserName" id="purchaser-name" required="required" class="w-full rounded shadow p-2 appearance-none border-0 outline-none ring-1 ring-neutral-100 focus:ring-2 focus:ring-sky-200 bg-white leading-snug m-0 disabled:bg-neutral-100 disabled:text-neutral-500">
+              <p class="text-neutral-500 font-light text-sm leading-snug">Please enter the same name you used when you purchased the shout-out.</p>
+              <p id="purchaser-name-error" class="text-red-500 font-semibold text-sm mt-1 hidden"></p>
+            </div>
+            <div class="w-full">
+              <label for="purchaser-email" class="w-full">Purchaser Email Address:</label>
+              <input type="email" name="purchaserEmail" id="purchaser-email" required="required" class="w-full rounded shadow p-2 appearance-none border-0 outline-none ring-1 ring-neutral-100 focus:ring-2 focus:ring-sky-200 bg-white leading-snug m-0 disabled:bg-neutral-100 disabled:text-neutral-500">
+              <p class="text-neutral-500 font-light text-sm leading-snug">Please enter the same email address you used when you purchased the shout-out.</p>
+              <p id="email-error" class="text-red-500 font-semibold text-sm mt-1 hidden"></p>
+            </div>
+            <div class="w-full">
               <label for="student-name" class="w-full">Student Name(s):</label>
               <input type="text" name="studentName" id="student-name" required="required" class="w-full rounded shadow p-2 appearance-none border-0 outline-none ring-1 ring-neutral-100 focus:ring-2 focus:ring-sky-200 bg-white leading-snug m-0 disabled:bg-neutral-100 disabled:text-neutral-500">
               <p class="text-neutral-500 font-light text-sm leading-snug">Please include the full name(s). We have lots of kids in this program and want to make sure we don't mix anything up.</p>
